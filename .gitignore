@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Production builds
+dist/
+dist-server/
+client/dist/
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+
+# Database & Runtime Data
+data/*.db
+data/*.db-wal
+data/*.db-shm
+.shadow-workspaces/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,43 @@
+{
+  "name": "raze-platform",
+  "version": "1.0.0",
+  "description": "RAZE — The Autonomous AI Engineering & Verification Ecosystem with Trust Collapse Engine",
+  "scripts": {
+    "server": "node --loader tsx server/src/index.ts",
+    "dev:server": "npx.cmd tsx watch server/src/index.ts",
+    "dev:client": "npm.cmd --prefix client run dev",
+    "dev": "npx.cmd concurrently \"npm.cmd run dev:server\" \"npm.cmd run dev:client\"",
+    "build:client": "npm.cmd --prefix client run build",
+    "build:server": "npx.cmd tsc -p server/tsconfig.json",
+    "build": "npm.cmd run build:server && npm.cmd run build:client",
+    "test": "node --test server/tests/*.test.mjs",
+    "test:unit": "npx.cmd tsx --test server/tests/verification.test.ts",
+    "start": "node dist-server/index.js"
+  },
+  "keywords": [
+    "ai",
+    "self-healing",
+    "trust-collapse",
+    "adversarial-testing",
+    "mutation-testing",
+    "security-guardian",
+    "verification"
+  ],
+  "author": "RAZE Core Team",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.5",
+    "concurrently": "^10.0.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "openai": "^7.43.0",
+    "zod": "^4.6.7"
+  }
+}

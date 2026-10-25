@@ -1,0 +1,11 @@
+{
+  "name": "auth-guardian",
+  "version": "1.0.0",
+  "description": "API Gateway authentication and path token verification service",
+  "main": "src/tokenValidator.ts",
+  "scripts": {
+    "test": "npx tsx --test tests/token.test.ts"
+  },
+  "keywords": ["security", "auth", "token", "gateway"],
+  "license": "MIT"
+}

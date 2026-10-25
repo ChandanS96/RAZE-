@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-darkest: #020204;
+    --bg-secondary: #07060a;
+    --bg-panel: rgba(12, 10, 18, 0.75);
+    --brand-violet: #6D28D9;
+    --brand-neon: #9B5CFF;
+    --brand-magenta: #FF2DF7;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+  }
+
+  body {
+    background-color: #020204;
+    color: #FFFFFF;
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom Sleek Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #020204;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 45, 247, 0.25);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 45, 247, 0.6);
+  }
+}
+
+/* Glassmorphism panel utility */
+.glass-panel {
+  background: rgba(12, 10, 18, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.65), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-glow {
+  background: rgba(16, 12, 25, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 45, 247, 0.3);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.7), 0 0 35px rgba(255, 45, 247, 0.18), inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+}
+
+.glass-panel-danger {
+  background: rgba(28, 10, 20, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 51, 102, 0.35);
+  box-shadow: 0 0 25px rgba(255, 51, 102, 0.18);
+}
+
+/* Cosmic purple neon glow */
+.cosmic-purple-glow {
+  box-shadow: 0 0 60px rgba(255, 45, 247, 0.35), 0 0 120px rgba(109, 40, 217, 0.25);
+}
+
+/* Rotating outer ring animation */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinReverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 20s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spinReverse 28s linear infinite;
+}
+
+/* Energy Core Pulse */
+@keyframes corePulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+    filter: drop-shadow(0 0 20px rgba(232, 121, 249, 0.6));
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+    filter: drop-shadow(0 0 40px rgba(155, 92, 255, 0.9));
+  }
+}
+
+.animate-core-pulse {
+  animation: corePulse 4s ease-in-out infinite;
+}
+
+/* Gradient text utilities */
+.gradient-text-brand {
+  background: linear-gradient(135deg, #F8F5FF 0%, #9B5CFF 60%, #E879F9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-cosmic {
+  background: linear-gradient(180deg, #FFFFFF 0%, #E4D8FF 60%, #9B5CFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-magenta {
+  background: linear-gradient(135deg, #9B5CFF 0%, #E879F9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtle vertical grid lines inspired by reference image */
+.cosmic-grid-overlay {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 25% 100%;
+}
+
+.cosmic-dashed-line {
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.22) 50%, transparent 50%);
+  background-size: 1px 14px;
+  background-repeat: repeat-y;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-spin-slow,
+  .animate-spin-reverse,
+  .animate-core-pulse {
+    animation: none;
+  }
+}

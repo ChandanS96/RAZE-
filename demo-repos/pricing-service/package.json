@@ -1,0 +1,13 @@
+{
+  "name": "pricing-service",
+  "version": "1.0.0",
+  "description": "High-throughput checkout pricing and discount computation engine",
+  "main": "src/pricing.ts",
+  "scripts": {
+    "test": "npx tsx --test tests/pricing.test.ts",
+    "test:adversarial": "npx tsx --test tests/adversarial.test.ts",
+    "test:all": "npx tsx --test tests/*.test.ts"
+  },
+  "keywords": ["pricing", "discount", "fintech", "checkout"],
+  "license": "MIT"
+}
